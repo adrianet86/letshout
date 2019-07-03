@@ -20,7 +20,7 @@ services:
 #    image: ${PHP_IMAGE}
     container_name: ${PHP_CONTAINER}
     environment:
-      - APP_ENV=prod
+      - APP_ENV=${PHP_ENVIRONMENT}
     working_dir: /app
     volumes:
       - ./php/src:/app
