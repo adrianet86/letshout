@@ -25,7 +25,7 @@
     
     docker-compose up -d --build 
     
-    curl -S http://127.0.0.1/shout/maikel_nait?limit=5
+    curl -S http://127.0.0.1/shout/nba?limit=5&cache=1
 
 ### Setup prod environment
 
@@ -35,7 +35,21 @@ Change the variable `PHP_ENVIRONMENT` to `prod` in the `/.env` file.
 
 However the vars `TWITTER_KEY` and `TWITTER_SECRET` from the `/php/src/.env` must be changed for
 valid Twitter credentials.   
-    
+
+### API
+Api has just one endpoint:
+
+>GET /shout/nba
+
+And two parameters:
+
+Integer **limit**: limit of messages. Default and max are 10.
+
+Bool (integer) **cache**: use of cache 
+
+>GET /shout/nba?limit=5&cache=1
+
+
         
 ### Test
 #### Unit testing
