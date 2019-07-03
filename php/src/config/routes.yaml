@@ -1,0 +1,3 @@
+shout:
+  path: /shout/{username}
+  controller: App\LetShout\Infrastructure\Api\Tweet\TweetShoutController::index

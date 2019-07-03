@@ -1,0 +1,5 @@
+.idea
+redis/data
+php/src/vendor
+php/src/var
+php/src/.env
