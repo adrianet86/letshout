@@ -17,14 +17,20 @@ class RedisCacheTweetRepository implements TweetRepository
      * @var \Redis
      */
     private $cache;
+    /**
+     * @var int
+     */
+    private $cacheExpiration;
 
     public function __construct(
         TweetRepository $tweetRepository,
         string $cacheHost,
-        int $cachePort
+        int $cachePort,
+        int $cacheExpiration
     )
     {
         $this->tweetRepository = $tweetRepository;
+        $this->cacheExpiration = $cacheExpiration;
         $this->cache = new \Redis();
         $this->cache->connect($cacheHost, $cachePort);
     }
@@ -48,7 +54,7 @@ class RedisCacheTweetRepository implements TweetRepository
 
         $tweets = $this->tweetRepository->searchByUserName($username, $limit);
 
-        $this->cache->set($key, $this->serialize($tweets), 36000);
+        $this->cache->set($key, $this->serialize($tweets), $this->cacheExpiration);
 
         return $tweets;
     }

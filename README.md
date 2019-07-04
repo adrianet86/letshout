@@ -33,8 +33,8 @@ Prod environmet must be set in order to use Twitter API instead of file reposito
 
 Change the variable `PHP_ENVIRONMENT` to `prod` in the `/.env` file.
 
-However the vars `TWITTER_KEY` and `TWITTER_SECRET` from the `/php/src/.env` must be changed for
-valid Twitter credentials.   
+However the vars `TWITTER_KEY` and `TWITTER_SECRET` from the `/php/src/.env` must be added 
+in `/php/src/.env.prod` file with valid Twitter credentials.   
 
 ### API
 Api has just one endpoint:

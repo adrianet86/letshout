@@ -7,6 +7,7 @@ parameters:
   APP_ENV: '%env(string:APP_ENV)%'
   CACHE_HOST: '%env(string:CACHE_HOST)%'
   CACHE_PORT: '%env(int:CACHE_PORT)%'
+  CACHE_EXPIRATION: '%env(int:CACHE_EXPIRATION)%'
   TWITTER_KEY: '%env(string:TWITTER_KEY)%'
   TWITTER_SECRET: '%env(string:TWITTER_SECRET)%'
 
@@ -58,6 +59,7 @@ services:
       - '@App\LetShout\Infrastructure\ApiClient\Tweet\ApiTweetRepositoryEnvironment'
       - '%CACHE_HOST%'
       - '%CACHE_PORT%'
+      - '%CACHE_EXPIRATIONT%'
 
   App\LetShout\Application\Service\Tweet\ShoutTweetsService:
     public: true
