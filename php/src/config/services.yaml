@@ -59,7 +59,7 @@ services:
       - '@App\LetShout\Infrastructure\ApiClient\Tweet\ApiTweetRepositoryEnvironment'
       - '%CACHE_HOST%'
       - '%CACHE_PORT%'
-      - '%CACHE_EXPIRATIONT%'
+      - '%CACHE_EXPIRATION%'
 
   App\LetShout\Application\Service\Tweet\ShoutTweetsService:
     public: true
